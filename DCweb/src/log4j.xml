@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<appender name="DCweb" class="org.apache.log4j.RollingFileAppender">
+   <param name="File" value="./logs/DCweb.log" />
+   <param name="Append" value="false" />
+   <param name="MaxBackupIndex" value="10" /> 
+   <layout class="org.apache.log4j.PatternLayout">
+       <param name="ConversionPattern" value="%p (%c:%L)- %m%n" />
+   </layout>
+</appender>
+<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">     
+  <layout class="org.apache.log4j.PatternLayout">     
+   <param name="ConversionPattern"     
+    value="%d - %c -%-4r [%t] %-5p %x - %m%n" />     
+  </layout>        
+</appender>     
+ 
+<root> 
+   <appender-ref ref="CONSOLE" />
+   <appender-ref ref="DCweb" />
+</root>
+</log4j:configuration>

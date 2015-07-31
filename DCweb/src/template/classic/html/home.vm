@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>${site_title}</title>
+</head>
+<body>
+<div>${site_desc}</div>
+<div>${site_home}</div>
+<a href="../index.html">back</a>
+</body>
+</html>
