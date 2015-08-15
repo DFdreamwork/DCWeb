@@ -1,16 +1,18 @@
 <%@page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@page import="DCwork.servlet.bd.ResourceUpdatedBd"%>
+<% ResourceUpdatedBd bd = new ResourceUpdatedBd(request); %>
 <!DOCTYPE HTML>
 <html>
 <head>
 </head>
 <body>
-<form name="frmName" >
-<div>select Page:<select name="page" >
-   <option value="site">site</option>
-   <option value="home">home</option>
-   <option value="index">index</option>
-</select></div>
-label: <input type="text" NAME="site_title" value="site_title" />
+<form name="frmName" action="./resource_update.jsp" >
+<div><%= bd.getResourceAsHtml() %></div>
+<div>
+<%= bd.showResoure() %>
+</div>
+
+<input type="submit" value="submit" />
 </form>
 </body>
 </html>

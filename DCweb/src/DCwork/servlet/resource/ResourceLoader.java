@@ -57,7 +57,7 @@ public class ResourceLoader {
    * 
    * @return
    */
-  private Map<String, String> loadFileResourceMap(String templateFileName){
+  public Map<String, String> loadFileResourceMap(String templateFileName){
     Map<String, String> paraMap = new HashMap<String, String>();
     String resoureName = String.format("resource/%s/%s_resource", getTemplateName(), templateFileName);
     ResourceBundle rb = ResourceBundle.getBundle(resoureName);
@@ -73,6 +73,15 @@ public class ResourceLoader {
   public List<String> getTemplateFiles(){
     List<String> list = new ArrayList<String>();
     File file = new File(PathUtils.getProjClassPath() + "/template/" + getTemplateName());
+    for(File f : PathUtils.listAllFiles(file)){
+      list.add(f.getAbsolutePath().substring(f.getAbsolutePath().indexOf(getTemplateName()) + getTemplateName().length()));
+    }
+    return list;
+  }
+  
+  public List<String> getResourceFiles(){
+    List<String> list = new ArrayList<String>();
+    File file = new File(PathUtils.getProjClassPath() + "/resource/" + getTemplateName());
     for(File f : PathUtils.listAllFiles(file)){
       list.add(f.getAbsolutePath().substring(f.getAbsolutePath().indexOf(getTemplateName()) + getTemplateName().length()));
     }

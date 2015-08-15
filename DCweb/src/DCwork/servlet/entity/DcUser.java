@@ -3,6 +3,9 @@
  */
 package DCwork.servlet.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import DCwork.servlet.resource.ResourceLoader;
 
 /**
@@ -17,6 +20,8 @@ public class DcUser {
    private String siteName = "";
    private boolean isCharge = false;
    private ResourceLoader resLoader = null;
+   
+   private Map<String, Map<String, String>> resMap = new HashMap<String, Map<String, String>>();
    
    private DcUser(String sName, String tName){
      setSiteName(sName);
@@ -60,6 +65,21 @@ public class DcUser {
 
   public void setResLoader(ResourceLoader resLoader) {
     this.resLoader = resLoader;
+  }
+  
+  public boolean hasResourece(String resItem){
+    return resMap.containsKey(resItem);
+  }
+  
+  public void addResource(String resItem, Map<String, String> resList){
+    resMap.put(resItem, resList);
+  }
+
+  public Map<String, String> getResource(String resItem) {
+    if(hasResourece(resItem)){
+      return resMap.get(resItem);
+    }
+    return null;
   }
   
 }
