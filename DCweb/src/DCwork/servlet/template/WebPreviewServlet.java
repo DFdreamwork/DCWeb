@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DCwork.servlet.entity.DcUser;
+import DCwork.utils.WebGenerateUtils;
 
 /**
  * @author Forrest

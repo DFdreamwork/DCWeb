@@ -1,7 +1,7 @@
 /**
  * 
  */
-package DCwork.servlet.template;
+package DCwork.utils;
 
 import java.io.PrintWriter;
 

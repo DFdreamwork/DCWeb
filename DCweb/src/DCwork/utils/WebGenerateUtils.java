@@ -1,7 +1,7 @@
 /**
  * 
  */
-package DCwork.servlet.template;
+package DCwork.utils;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -12,7 +12,6 @@ import java.util.Map;
 import org.apache.velocity.VelocityContext;
 
 import DCwork.servlet.resource.ResourceLoader;
-import DCwork.utils.PathUtils;
 
 /**
  * @author Forrest

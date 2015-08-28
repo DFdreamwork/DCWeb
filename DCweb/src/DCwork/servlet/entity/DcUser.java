@@ -82,4 +82,8 @@ public class DcUser {
     return null;
   }
   
+  public boolean isPreview(){
+    return getSiteName().equals(getTemplateName());
+  }
+  
 }
